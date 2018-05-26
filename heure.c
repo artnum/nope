@@ -45,7 +45,7 @@ float f( float x ) {
 }
 
 float fbis ( float x, float r[2] ) {
-    float a = 0, b = 0, c = 0, dr = r[1] - r[0];
+    float a = 0, b = 0, c = 0, dr = fabsf(r[0] - r[1]);
 
     a = ((1 - sgn(x * ( x - r[0]))) / 2) * x;
     b = ((1 - sgn(( x - r[0] ) * ( x - r[1] ))) / 2) * ( (3 * x) - (24 - dr) );
